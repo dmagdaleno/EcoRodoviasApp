@@ -11,9 +11,9 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_gps.*
 
-class MainActivity : AppCompatActivity() {
+class GPSActivity : AppCompatActivity() {
 
     companion object {
         private const val LOCATION_PERMISSION_CODE = 100
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_gps)
         
         if(!hasToAskPermissions()) {
             enableButtons()
