@@ -1,4 +1,4 @@
-package br.com.fiap.challenge.ecorodoviasapp
+package br.com.fiap.challenge.ecorodoviasapp.service
 
 import android.annotation.SuppressLint
 import android.app.Service

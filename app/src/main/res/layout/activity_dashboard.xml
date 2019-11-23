@@ -30,4 +30,67 @@
         app:layout_constraintEnd_toEndOf="@id/dashboardScreenTop"
         app:layout_constraintBottom_toBottomOf="@id/dashboardScreenTop"/>
 
+    <TextView
+        android:id="@+id/dashboardUserName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="José da Silva"
+        app:layout_constraintTop_toBottomOf="@id/dashboardScreenTop"
+        app:layout_constraintStart_toStartOf="@id/dashboardScreenTop"
+        app:layout_constraintEnd_toEndOf="@id/dashboardScreenTop" />
+
+    <TextView
+        android:id="@+id/dashboardMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:text="@string/chose_option"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/dashboardUserName"
+        app:layout_constraintStart_toStartOf="@id/dashboardUserName"
+        app:layout_constraintEnd_toEndOf="@id/dashboardUserName" />
+
+    <Button
+        android:id="@+id/newRouteButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/new_route"
+        android:textColor="@color/button_border"
+        app:layout_constraintTop_toBottomOf="@id/dashboardMessage"
+        app:layout_constraintStart_toStartOf="@id/dashboardMessage"
+        app:layout_constraintEnd_toEndOf="@id/dashboardMessage" />
+
+    <Button
+        android:id="@+id/incidentsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/see_incidents"
+        android:textColor="@color/button_border"
+        app:layout_constraintTop_toBottomOf="@id/newRouteButton"
+        app:layout_constraintStart_toStartOf="@id/newRouteButton"
+        app:layout_constraintEnd_toEndOf="@id/newRouteButton" />
+
+    <Button
+        android:id="@+id/newIncidentButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg"
+        android:text="@string/new_incident"
+        android:textColor="@color/button_border"
+        app:layout_constraintTop_toBottomOf="@id/incidentsButton"
+        app:layout_constraintStart_toStartOf="@id/incidentsButton"
+        app:layout_constraintEnd_toEndOf="@id/incidentsButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

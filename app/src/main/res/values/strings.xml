@@ -6,4 +6,11 @@
     <string name="new_user_message">Esse é o seu primeiro acesso. Por favor, cadastre o seu nome para que possamos fazer sua identificação.</string>
     <string name="full_name">Nome completo</string>
     <string name="save">Salvar</string>
+    <string name="new_incident">Registrar incidente</string>
+    <string name="chose_option">Escolha uma das opções abaixo:</string>
+    <string name="new_route">Nova rota</string>
+    <string name="see_incidents">Visualizar incidentes</string>
+    <string name="new_incident_header">Novo Incidente</string>
+    <string name="incident_title">Assunto</string>
+    <string name="incident_description">Descrição</string>
 </resources>

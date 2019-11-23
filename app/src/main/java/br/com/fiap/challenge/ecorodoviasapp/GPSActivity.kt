@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import br.com.fiap.challenge.ecorodoviasapp.service.GPSService
 import kotlinx.android.synthetic.main.activity_gps.*
 
 class GPSActivity : AppCompatActivity() {
