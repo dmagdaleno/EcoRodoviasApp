@@ -4,10 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_NAME
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_NAME
+import br.com.fiap.challenge.ecorodoviasapp.util.*
 import kotlinx.android.synthetic.main.activity_new_user.*
 import java.util.*
 
@@ -20,6 +17,7 @@ class NewUserActivity : AppCompatActivity() {
         userSaveButton.setOnClickListener {
             saveUserId()
             saveUserName()
+            saveCarPlate()
             openDashboard()
         }
     }
@@ -38,6 +36,15 @@ class NewUserActivity : AppCompatActivity() {
             .edit()
             .also {
                 it.putString(USER_NAME, userNameEditText.text.toString())
+            }
+            .apply()
+    }
+
+    private fun saveCarPlate() {
+        getSharedPreferences(PREF_USER_CAR_PLATE, Context.MODE_PRIVATE)
+            .edit()
+            .also {
+                it.putString(USER_CAR_PLATE, userCarPlateEditText.text.toString())
             }
             .apply()
     }

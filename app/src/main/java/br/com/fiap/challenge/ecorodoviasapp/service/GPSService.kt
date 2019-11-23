@@ -11,15 +11,10 @@ import android.os.Bundle
 import android.os.IBinder
 import android.provider.Settings
 import android.util.Log
-import android.widget.Toast
-import br.com.fiap.challenge.ecorodoviasapp.NewIncidentActivity
 import br.com.fiap.challenge.ecorodoviasapp.domain.Position
 import br.com.fiap.challenge.ecorodoviasapp.domain.User
 import br.com.fiap.challenge.ecorodoviasapp.domain.UserLocation
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_NAME
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_NAME
+import br.com.fiap.challenge.ecorodoviasapp.util.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -108,14 +103,20 @@ class GPSService: Service() {
 
         val name = getUserName()
 
-        return User(id = uuid, name = name)
+        val carPlate = getUserCarPlate()
+
+        return User(id = uuid, name = name, carPlate = carPlate)
     }
+
+    private fun getUserId() =
+        getSharedPreferences(PREF_USER_ID, Context.MODE_PRIVATE)
+            .getString(USER_ID, "") ?: ""
 
     private fun getUserName() =
         getSharedPreferences(PREF_USER_NAME, Context.MODE_PRIVATE)
             .getString(USER_NAME, "") ?: ""
 
-    private fun getUserId() =
-        getSharedPreferences(PREF_USER_ID, Context.MODE_PRIVATE)
-            .getString(USER_ID, "") ?: ""
+    private fun getUserCarPlate() =
+        getSharedPreferences(PREF_USER_CAR_PLATE, Context.MODE_PRIVATE)
+            .getString(USER_CAR_PLATE, "") ?: ""
 }

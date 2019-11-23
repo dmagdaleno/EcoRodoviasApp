@@ -56,6 +56,17 @@
         app:layout_constraintStart_toStartOf="@id/userMessage"
         app:layout_constraintEnd_toEndOf="@id/userMessage" />
 
+    <EditText
+        android:id="@+id/userCarPlateEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/car_plate"
+        android:inputType="textCapCharacters|number"
+        app:layout_constraintTop_toBottomOf="@id/userNameEditText"
+        app:layout_constraintStart_toStartOf="@id/userNameEditText"
+        app:layout_constraintEnd_toEndOf="@id/userNameEditText" />
+
     <Button
         android:id="@+id/userSaveButton"
         android:layout_width="0dp"
@@ -64,8 +75,8 @@
         android:background="@drawable/button_bg"
         android:text="@string/save"
         android:textColor="@color/button_border"
-        app:layout_constraintTop_toBottomOf="@id/userNameEditText"
-        app:layout_constraintStart_toStartOf="@id/userNameEditText"
-        app:layout_constraintEnd_toEndOf="@id/userNameEditText" />
+        app:layout_constraintTop_toBottomOf="@id/userCarPlateEditText"
+        app:layout_constraintStart_toStartOf="@id/userCarPlateEditText"
+        app:layout_constraintEnd_toEndOf="@id/userCarPlateEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

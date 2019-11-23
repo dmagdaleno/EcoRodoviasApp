@@ -14,10 +14,7 @@ import android.widget.Toast
 import br.com.fiap.challenge.ecorodoviasapp.domain.*
 import br.com.fiap.challenge.ecorodoviasapp.service.EcoviasService
 import br.com.fiap.challenge.ecorodoviasapp.service.IncidentService
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_NAME
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_ID
-import br.com.fiap.challenge.ecorodoviasapp.util.USER_NAME
+import br.com.fiap.challenge.ecorodoviasapp.util.*
 import kotlinx.android.synthetic.main.activity_new_incident.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,13 +41,15 @@ class NewIncidentActivity : AppCompatActivity() {
 
         val name = getUserName()
 
+        val carPlate = getUserCarPlate()
+
         incidentSaveButton.setOnClickListener {
 
             val incident = Incident (
                 type = IncidentType.CONFIRMED,
                 title = incidentTitleEditText.text.toString(),
                 description = incidentDescriptionEditText.text.toString(),
-                user = User(id = uuid, name = name),
+                user = User(id = uuid, name = name, carPlate = carPlate),
                 position = Position(latitude = latitude, longitude = longitude)
             )
             Log.d(TAG, "$incident")
@@ -77,13 +76,17 @@ class NewIncidentActivity : AppCompatActivity() {
         })
     }
 
+    private fun getUserId() =
+        getSharedPreferences(PREF_USER_ID, Context.MODE_PRIVATE)
+            .getString(USER_ID, "") ?: ""
+
     private fun getUserName() =
         getSharedPreferences(PREF_USER_NAME, Context.MODE_PRIVATE)
             .getString(USER_NAME, "") ?: ""
 
-    private fun getUserId() =
-        getSharedPreferences(PREF_USER_ID, Context.MODE_PRIVATE)
-            .getString(USER_ID, "") ?: ""
+    private fun getUserCarPlate() =
+        getSharedPreferences(PREF_USER_CAR_PLATE, Context.MODE_PRIVATE)
+            .getString(USER_CAR_PLATE, "") ?: ""
 
     @SuppressLint("MissingPermission")
     private fun getLocation() {
