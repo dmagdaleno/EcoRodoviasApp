@@ -26,8 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         if(!::broadcastReceiver.isInitialized) {
             broadcastReceiver = object : BroadcastReceiver() {
-                override fun onReceive(p0: Context?, p1: Intent?) {
-                    textView.append("\n ${getCoordinates()}")
+                override fun onReceive(context: Context?, intent: Intent?) {
+                    intent?.let {
+                        textView.append("\n ${it.getCoordinates()}")
+                    }
                 }
             }
         }
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(broadcastReceiver, IntentFilter("location_update"))
     }
 
-    private fun getCoordinates() = intent.extras?.get("coordinates") ?: ""
+    private fun Intent.getCoordinates() = this.extras?.get("coordinates") ?: "undefined"
 
     override fun onDestroy() {
         super.onDestroy()

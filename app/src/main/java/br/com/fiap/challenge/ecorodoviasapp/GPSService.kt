@@ -26,15 +26,15 @@ class GPSService: Service() {
                     val newIntent = Intent("location_update").apply {
                         putExtra("coordinates", "${it.longitude} ${it.latitude}")
                     }
-                    startActivity(newIntent)
+                    sendBroadcast(newIntent)
                 }
             }
 
-            override fun onStatusChanged(p0: String?, p1: Int, p2: Bundle?) { }
+            override fun onStatusChanged(s: String?, p1: Int, bundle: Bundle?) { }
 
-            override fun onProviderEnabled(p0: String?) { }
+            override fun onProviderEnabled(s: String?) { }
 
-            override fun onProviderDisabled(p0: String?) {
+            override fun onProviderDisabled(provider: String?) {
                 val newIntent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 }
@@ -43,13 +43,18 @@ class GPSService: Service() {
         }
 
         locationManager = applicationContext.getSystemService(Context.LOCATION_SERVICE) as LocationManager
-
         val intervalInMillis: Long = 3000
-        val intervalInMeters = .0f
+        val intervalInMeters = 0.0f
 
         //noinspection MissingPermission
         locationManager.requestLocationUpdates(
             LocationManager.GPS_PROVIDER,
+            intervalInMillis, intervalInMeters,
+            locationListener)
+
+
+        locationManager.requestLocationUpdates(
+            LocationManager.NETWORK_PROVIDER,
             intervalInMillis, intervalInMeters,
             locationListener)
     }
