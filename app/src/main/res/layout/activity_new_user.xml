@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="@string/car_plate"
-        android:inputType="textCapCharacters|number"
+        android:inputType="textVisiblePassword"
         app:layout_constraintTop_toBottomOf="@id/userNameEditText"
         app:layout_constraintStart_toStartOf="@id/userNameEditText"
         app:layout_constraintEnd_toEndOf="@id/userNameEditText" />
