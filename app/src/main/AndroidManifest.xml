@@ -25,7 +25,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewUserActivity" />
-        <activity android:name=".GPSActivity" />
 
         <service android:name=".service.GPSService" />
     </application>
