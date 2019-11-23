@@ -13,4 +13,6 @@
     <string name="new_incident_header">Novo Incidente</string>
     <string name="incident_title">Assunto</string>
     <string name="incident_description">Descrição</string>
+    <string name="start_tracking">Iniciar Rastreio</string>
+    <string name="stop_tracking">Parar Rastreio</string>
 </resources>

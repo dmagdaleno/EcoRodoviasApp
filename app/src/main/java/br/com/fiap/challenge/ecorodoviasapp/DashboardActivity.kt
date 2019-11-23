@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.core.content.ContextCompat
+import br.com.fiap.challenge.ecorodoviasapp.service.GPSService
 import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_ID
 import br.com.fiap.challenge.ecorodoviasapp.util.PREF_USER_NAME
 import br.com.fiap.challenge.ecorodoviasapp.util.USER_ID
@@ -43,6 +44,13 @@ class DashboardActivity : AppCompatActivity() {
     }
 
     private fun enableButtons() {
+        startTrackingButton.setOnClickListener {
+            startService(Intent(applicationContext, GPSService::class.java))
+        }
+
+        stopTrackingButton.setOnClickListener {
+            stopService(Intent(applicationContext, GPSService::class.java))
+        }
 
         newIncidentButton.setOnClickListener {
             startActivity(Intent(this, NewIncidentActivity::class.java))

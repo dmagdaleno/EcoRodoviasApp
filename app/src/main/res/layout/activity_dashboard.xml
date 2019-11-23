@@ -58,28 +58,28 @@
         app:layout_constraintEnd_toEndOf="@id/dashboardUserName" />
 
     <Button
-        android:id="@+id/newRouteButton"
+        android:id="@+id/startTrackingButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_bg"
-        android:text="@string/new_route"
+        android:text="@string/start_tracking"
         android:textColor="@color/button_border"
         app:layout_constraintTop_toBottomOf="@id/dashboardMessage"
         app:layout_constraintStart_toStartOf="@id/dashboardMessage"
         app:layout_constraintEnd_toEndOf="@id/dashboardMessage" />
 
     <Button
-        android:id="@+id/incidentsButton"
+        android:id="@+id/stopTrackingButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:background="@drawable/button_bg"
-        android:text="@string/see_incidents"
+        android:text="@string/stop_tracking"
         android:textColor="@color/button_border"
-        app:layout_constraintTop_toBottomOf="@id/newRouteButton"
-        app:layout_constraintStart_toStartOf="@id/newRouteButton"
-        app:layout_constraintEnd_toEndOf="@id/newRouteButton" />
+        app:layout_constraintTop_toBottomOf="@id/startTrackingButton"
+        app:layout_constraintStart_toStartOf="@id/startTrackingButton"
+        app:layout_constraintEnd_toEndOf="@id/startTrackingButton" />
 
     <Button
         android:id="@+id/newIncidentButton"
@@ -89,8 +89,8 @@
         android:background="@drawable/button_bg"
         android:text="@string/new_incident"
         android:textColor="@color/button_border"
-        app:layout_constraintTop_toBottomOf="@id/incidentsButton"
-        app:layout_constraintStart_toStartOf="@id/incidentsButton"
-        app:layout_constraintEnd_toEndOf="@id/incidentsButton" />
+        app:layout_constraintTop_toBottomOf="@id/stopTrackingButton"
+        app:layout_constraintStart_toStartOf="@id/stopTrackingButton"
+        app:layout_constraintEnd_toEndOf="@id/stopTrackingButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
